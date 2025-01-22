@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+movementgolffitness-f40e0596ee82.json
 
 # Editor directories and files
 .vscode/*
