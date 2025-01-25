@@ -18,7 +18,7 @@ export class AuthService {
        
       await this.account.createOAuth2Session(
         OAuthProvider.Google,
-        "http://localhost:5174/success",
+        "http://localhost:5173",
         "http://localhost:3000/failed"
       );
 
@@ -40,6 +40,16 @@ export class AuthService {
       return null;
     }
   }
+
+  async logout(){
+    try {
+      await this.account.deleteSession("current");
+      console.log('Logout successful')
+    } catch (error) {
+      console.error("Appwrite Error :: logout", error);
+    }
+  }
+
 }
 
 const authService = new AuthService();

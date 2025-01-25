@@ -1,5 +1,5 @@
 import { google } from "googleapis";
-import { config } from "../conf/conf";
+import  config  from "../conf/conf";
 
 const SCOPES = config.googleScopes;
 const SHEET_ID = config.googleSheetId;

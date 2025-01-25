@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const dataSlice = createSlice({
-    name: data,
+    name: 'data',
     initialState,
     reducers: {
         setGoogleSheetData: (state, action) => {
