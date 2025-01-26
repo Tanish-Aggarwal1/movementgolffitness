@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import authService from "../../appwrite/auth";
+import { setSession } from "../../store/authSlice";
 
 function Login() {
   const [error, setError] = useState("");

@@ -1,60 +1,60 @@
 import React, { useState, useEffect } from "react";
 import authService from "./appwrite/auth";
-import {Header} from './Components/index.js'
+import {Header, Profile} from './Components/index.js';
 
 function App() {
-  const [session, setSession] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [sheetData, setSheetData] = useState(null);
+  // const [session, setSession] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(null);
+  // const [sheetData, setSheetData] = useState(null);
 
-  // Fetch session details after OAuth redirection
-  useEffect(() => {
-    const fetchSession = async () => {
-      try {
-        const session = await authService.getSession();
-        setSession(session);
-      } catch (error) {
-        console.log("No active session", error);
-      }
-    };
+  // // Fetch session details after OAuth redirection
+  // useEffect(() => {
+  //   const fetchSession = async () => {
+  //     try {
+  //       const session = await authService.getSession();
+  //       setSession(session);
+  //     } catch (error) {
+  //       console.log("No active session", error);
+  //     }
+  //   };
 
-    fetchSession();
-  }, []);
+  //   fetchSession();
+  // }, []);
 
-  const handleLogin = async () => {
-    try {
-      setLoading(true);
-      await authService.createSession();
-    } catch (error) {
-      console.error("Login failed", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const handleLogin = async () => {
+  //   try {
+  //     setLoading(true);
+  //     await authService.createSession();
+  //   } catch (error) {
+  //     console.error("Login failed", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  const handleFetchData = async () => {
-    setLoading(true);
-    setError(null);
+  // const handleFetchData = async () => {
+  //   setLoading(true);
+  //   setError(null);
 
-    try {
-      const response = await fetch('http://localhost:5000/api/sheet-data');
-      if(!response.ok) {
-        throw new Error(`Failed to fetch data: ${response.statusText}`);
-      }
-      const data = await response.json();
-      setSheetData(data);
-    } catch (error) {
-      console.error("Error fetching from backend", error);
-      setError("Failed to fetch data");
-    } finally{
-      setLoading(false);
-    }
+  //   try {
+  //     const response = await fetch('http://localhost:5000/api/sheet-data');
+  //     if(!response.ok) {
+  //       throw new Error(`Failed to fetch data: ${response.statusText}`);
+  //     }
+  //     const data = await response.json();
+  //     setSheetData(data);
+  //   } catch (error) {
+  //     console.error("Error fetching from backend", error);
+  //     setError("Failed to fetch data");
+  //   } finally{
+  //     setLoading(false);
+  //   }
     
-  };
+  // };
 
   return ( <>
-    <Header />
+    {/* <Header />
 
     <div className="app">
       <h1>Login with Google OAuth</h1>
@@ -89,7 +89,9 @@ function App() {
         )}
       </div>
 
-    </div>
+    </div> */}
+    <Profile/>
+    
     </>
   );
 }

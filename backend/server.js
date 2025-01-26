@@ -11,7 +11,7 @@ app.use(express.json());
 
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
 const SHEET_ID = "16W8pczg8seDF5BfyuF8Ix-HCOZmtcnXKFLXHeTWUoCw";
-const SHEET_RANGE = 'Golf - monthly measures!A2:R19';
+const SHEET_RANGE = 'Golf - monthly measures!A1:R19';
 
 const auth = new google.auth.GoogleAuth({
   keyFile: '../movementgolffitness-f40e0596ee82.json',

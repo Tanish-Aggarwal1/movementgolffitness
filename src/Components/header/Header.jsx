@@ -32,6 +32,11 @@ const navigate = useNavigate();
       name: "Login",
       slug: "/login",
       active: !authStatus
+    },
+    {
+      name: "Profile",
+      slug: "/profile",
+      active: authStatus
     }
   ];
 
@@ -46,7 +51,7 @@ const navigate = useNavigate();
               </Link>
           </div>
           <ul className='flex ml-auto'>
-            {navItems.map((item) => 
+            {navItems.map((item) =>  
             item.active ? (
               <li key={item.name}>
                 <button
