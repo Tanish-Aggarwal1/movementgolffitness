@@ -12,7 +12,7 @@ const dataSlice = createSlice({
     reducers: {
         setGoogleSheetData: (state, action) => {
             state.googleSheetData = action.payload;
-            state.loading = false;
+            // state.loading = false;
             state.error = null
         },
         setLoading: (state, action) => {
@@ -20,7 +20,7 @@ const dataSlice = createSlice({
         },
         setError: (state, action) => {
             state.error = action.payload;
-            state.loading = false;
+            state.googleSheetData = null
         }
     }
 })

@@ -15,15 +15,13 @@ export class AuthService {
 
   async createSession() {
     try {
-       
-      await this.account.createOAuth2Session(
+      await this.account.createOAuth2Session(     //TODO: does not return anything, only redirection and creating session + storing in appwrite
         OAuthProvider.Google,
-        "http://localhost:5173",
-        "http://localhost:3000/failed"
+        "http://localhost:5173/success",
+        "http://localhost:5173/failed"
       );
 
-      return await this.getSession();
-
+      return await this.getSession();   //TODO: this is not needed here, ideally this getSession should be called from Home page
     } catch (error) {
       console.error("Appwrite Error :: createSession", error);
       return null;
@@ -32,7 +30,7 @@ export class AuthService {
 
   async getSession() {
     try {
-      const session = await this.account.get();
+      const session = await this.account.get();   //TODO: gets the session from appwrite, should be called in useEffect in Home page
       this.session = session;
       return session;
     } catch (error) {
@@ -41,15 +39,14 @@ export class AuthService {
     }
   }
 
-  async logout(){
+  async logout() {
     try {
-      await this.account.deleteSession("current");
-      console.log('Logout successful')
+      await this.account.deleteSession("current");  //TODO: deleteSessions() if all sessions to be deleted
+      console.log("Logout successful");
     } catch (error) {
       console.error("Appwrite Error :: logout", error);
     }
   }
-
 }
 
 const authService = new AuthService();

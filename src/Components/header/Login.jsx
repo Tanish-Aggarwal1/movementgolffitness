@@ -1,35 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import authService from "../../appwrite/auth";
 import { setSession } from "../../store/authSlice";
 
 function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  //local state to see session
+  const [session, setSessionState] = useState(null);
 
   const handleLogin = async () => {
     setError("");
     setLoading(true);
     try {
-      const loginSuccess = await authService.createSession();
+      const session = await authService.createSession();
 
-      if (loginSuccess) {
-        const session = await authService.getSession();
-        if (session) dispatch(setSession(session));
-        navigate("/");
+      if (session) {
+        setSessionState(session);
+        dispatch(
+          setSession({
+            session, 
+          })
+        );
+      } else {
+        throw new Error("Failed to create session");
       }
     } catch (error) {
-      setError(error.message);
+      setError(error.message); 
       console.error("Login failed", error);
     } finally {
-      setLoading(false);
+      setLoading(false); 
     }
   };
 
-  return <button onClick={handleLogin}>Login</button>
+
+
+
+  return (
+    <>
+      <button className="inline-block px-6 py-2 duration-200 hover:text-teal-600" 
+       onClick={handleLogin}>Login</button>
+      {session && (
+        <div>
+          <h2>Session Details:</h2>
+          <pre>{JSON.stringify(session, null, 2)}</pre>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default Login;

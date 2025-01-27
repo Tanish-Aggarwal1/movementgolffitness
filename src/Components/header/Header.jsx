@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom';
-import {Logo, Container, Login} from '../index'
+import { useNavigate, Link } from 'react-router-dom';
+import {Logo, Container, Login, LogoutBtn} from '../index'
 
 function Header() {
 const authStatus = useSelector((state) => state.auth.isAuthenticated); 
@@ -29,11 +29,6 @@ const navigate = useNavigate();
       active: true
     },
     {
-      name: "Login",
-      slug: "/login",
-      active: !authStatus
-    },
-    {
       name: "Profile",
       slug: "/profile",
       active: authStatus
@@ -43,20 +38,20 @@ const navigate = useNavigate();
   return(
     <header className='py-3 shadow bg-gray-500'>
       <Container>
-        <nav className='flex'>
-          <div className='mr-4'>
+        <nav className='flex justify-around'>
+          <div className='mr-4 py-2'>
             <Link to='/'>
               <Logo width='70px'   />
 
               </Link>
           </div>
-          <ul className='flex ml-auto'>
+          <ul className='flex'>
             {navItems.map((item) =>  
             item.active ? (
               <li key={item.name}>
                 <button
                 onClick={() => navigate(item.slug)}
-                className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                className='inline-block px-6 py-2 duration-200 hover:text-teal-600'
                 >{item.name}</button>
               </li>
             ) : null

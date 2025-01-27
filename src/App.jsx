@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+import {Login} from './Components/index.js'
 import authService from "./appwrite/auth";
+import { setSession } from "./store/authSlice.js";
 import {Header, Profile} from './Components/index.js';
+import { useDispatch } from "react-redux";
+
 
 function App() {
-  // const [session, setSession] = useState(null);
+  // const [session, setsession] = useState(null);
   // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState(null);
   // const [sheetData, setSheetData] = useState(null);
@@ -53,45 +57,14 @@ function App() {
     
   // };
 
+
+
+  
+ 
+
   return ( <>
-    {/* <Header />
-
-    <div className="app">
-      <h1>Login with Google OAuth</h1>
-      {!session ? (
-        <button
-          onClick={handleLogin}
-          className="bg-red-500 text-white px-4 py-2 rounded"
-          disabled={loading}
-        >
-          {loading ? "Logging in..." : "Login"}
-        </button>
-      ) : (
-        <div>
-          <h2>Welcome!</h2>
-          <pre>{JSON.stringify(session, null, 2)}</pre>
-        </div>
-      )}
-
-      <div className="sheet">
-        <h1>sheet test fetch</h1>
-        <button onClick={handleFetchData}>
-          {loading ? "Fetching data..." : "Fetch Data"}
-        </button>
-
-        {error && <p className="text-red-500">{error}</p>}
-
-        {sheetData && (
-          <div>
-            <h2>Fetched Data:</h2>
-            <pre>{JSON.stringify(sheetData, null, 2)}</pre>
-          </div>
-        )}
-      </div>
-
-    </div> */}
-    <Profile/>
     
+    <p className="font-playfair">hello checking font</p>
     </>
   );
 }
