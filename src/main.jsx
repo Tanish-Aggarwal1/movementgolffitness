@@ -8,6 +8,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import {AuthLayout, Profile} from './Components/index.js'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
+import Opportunities from './pages/Opportunities.jsx'
 
 
 const router = createBrowserRouter([
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <About/>
+      },
+      {
+        path: '/contact',
+        element: <Contact/>
+      },
+      {
+        path: '/opportunities',
+        element: <Opportunities/>
       }
     ]
   }

@@ -38,10 +38,10 @@ const navigate = useNavigate();
   return(
     <header className='sticky top-0 left-0 z-50 flex min-h-[15vh] w-full items-center bg-white py-3'>
       <Container>
-        <nav className='flex w-full justify-around'>
+        <nav className='flex w-full justify-around items-center'>
           <div className='mr-4 py-2'>
             <Link to='/'>
-              <Logo width='70px'   />
+              <Logo    />
 
               </Link>
           </div>
@@ -51,7 +51,7 @@ const navigate = useNavigate();
               <li key={item.name}>
                 <button
                 onClick={() => navigate(item.slug)}
-                className='inline-block px-6 py-2 duration-200 hover:text-teal-600'
+                className='inline-block px-6 py-2 duration-200 hover:text-blue-500 focus:text-blue-500'
                 >{item.name}</button>
               </li>
             ) : null

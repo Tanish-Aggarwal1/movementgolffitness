@@ -40,10 +40,11 @@ function Home() {
             form-3
           </div>
 
-          <p className="flex items-center justify-center border-2 border-white bg-transparent px-3 py-3 text-center text-white duration-200 hover:border-black hover:bg-transparent hover:text-black">
+          
+        </div>
+        <p className="flex items-center justify-center border-2 border-white bg-transparent mb-10 px-3 py-3 text-center text-white duration-200 hover:border-black hover:bg-transparent hover:text-black">
             Click for more information on sponsorship opportunities.
           </p>
-        </div>
       </section>
 
       <section className="flex min-h-[50vh] flex-col items-center justify-center gap-5 bg-[url('https://static.wixstatic.com/media/90beeb_0decc19423a44d94a2d88c8546a174b4~mv2.jpg/v1/fill/w_1900,h_502,al_t,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/90beeb_0decc19423a44d94a2d88c8546a174b4~mv2.jpg')] bg-cover bg-center bg-no-repeat pt-6 text-white">
