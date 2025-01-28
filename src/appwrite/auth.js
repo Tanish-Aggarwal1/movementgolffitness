@@ -17,7 +17,7 @@ export class AuthService {
     try {
       await this.account.createOAuth2Session(     //TODO: does not return anything, only redirection and creating session + storing in appwrite
         OAuthProvider.Google,
-        "http://localhost:5173/success",
+        "http://localhost:5173/",
         "http://localhost:5173/failed"
       );
 

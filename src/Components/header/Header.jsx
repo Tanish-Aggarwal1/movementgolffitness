@@ -36,9 +36,9 @@ const navigate = useNavigate();
   ];
 
   return(
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='sticky top-0 left-0 z-50 flex min-h-[15vh] w-full items-center bg-white py-3'>
       <Container>
-        <nav className='flex justify-around'>
+        <nav className='flex w-full justify-around'>
           <div className='mr-4 py-2'>
             <Link to='/'>
               <Logo width='70px'   />
