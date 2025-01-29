@@ -28,7 +28,7 @@ function Profile() {
 
   const headers = googleSheetData && googleSheetData.length > 0 ? googleSheetData[0] : [];
   const filteredRows = googleSheetData
-    ? googleSheetData.slice(1).filter((row) => row[1] === "some1@example.com") // Hardcoded email for now
+    ? googleSheetData.slice(1).filter((row) => row[1] === session?.email) // Hardcoded email for now
     : [];
 
   if (loading) {

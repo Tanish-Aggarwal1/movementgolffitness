@@ -12,14 +12,16 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(`useEffect ran`);
     
     authService.getSession()
     .then((session) => {
       if(session) {
+        console.log('called getSession', session);
         dispatch(setSession(session))
       }else{
-        dispatch(clearSesssion())
+        dispatch(clearSession())
+        console.log(`didn't get session`);
+        
       }
     } )
     .finally(() => setLoading(false))

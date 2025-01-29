@@ -16,7 +16,8 @@ function Login() {
     setLoading(true);
     try {
       const session = await authService.createSession();
-
+      console.log(`session in Login`, session);
+      
       if (session) {
         setSessionState(session);
         dispatch(

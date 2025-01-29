@@ -11,7 +11,7 @@ const authSlice = createSlice({
   reducers: {
     setSession: (state, action) => {
       state.isAuthenticated = true;
-      state.session = action.payload.session;   
+      state.session = action.payload;   
     },
     clearSession: (state) => {
       state.isAuthenticated = false;
