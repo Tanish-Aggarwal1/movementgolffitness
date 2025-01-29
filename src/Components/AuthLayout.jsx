@@ -9,7 +9,7 @@ function AuthLayout({children, authentication = true}) {
 
     useEffect(() => {
         if(authentication && authStatus !== authentication){
-            navigate("/login")
+            navigate("/not-authorised")
         } else if(!authentication && authStatus !== authentication){
             navigate("/")
         }
