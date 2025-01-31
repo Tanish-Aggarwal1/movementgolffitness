@@ -1,8 +1,9 @@
 import React from 'react'
+import { Container } from "../Components/index";
 
 function Opportunities() {
   return (
-    <div className='w-[100%]'>
+    <Container>
       <section className="font-playfair flex flex-col items-center gap-2 bg-gray-500 pt-6">
         
         <hr className="my-4 w-8 border-t-3 border-white" />
@@ -39,7 +40,7 @@ function Opportunities() {
           Click for more information on sponsorship opportunities.
         </p>
       </section>
-    </div>
+    </Container>
   )
 }
 

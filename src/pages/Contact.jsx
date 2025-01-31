@@ -1,10 +1,12 @@
 import React from 'react'
+import { Container } from "../Components/index";
+
 
 function Contact() {
   return (
-    <div>
+    <Container>
       
-    </div>
+    </Container>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setGoogleSheetData, setLoading, setError } from "../../store/dataSlice";
+import {Loader, Container} from '../index';
 
 function Profile() {
   const { googleSheetData, loading, error } = useSelector((state) => state.data);
@@ -32,7 +33,11 @@ function Profile() {
     : [];
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <Container>
+        <Loader />
+      </Container>
+    );
   }
 
   if (error) {
@@ -44,7 +49,7 @@ function Profile() {
   }
 
   return (
-    <div>
+    <Container>
       <h1>Profile</h1>
       <table border="1" style={{ width: "100%", textAlign: "left" }}>
         <thead>
@@ -70,7 +75,7 @@ function Profile() {
           )}
         </tbody>
       </table>
-    </div>
+    </Container>
   );
 }
 

@@ -29,6 +29,11 @@ const navigate = useNavigate();
       active: true
     },
     {
+      name: "Calendars",
+      slug: "/calendars",
+      active: true
+    },
+    {
       name: "Profile",
       slug: "/profile",
       active: authStatus
