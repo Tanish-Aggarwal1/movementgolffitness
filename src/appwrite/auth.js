@@ -3,8 +3,8 @@ import conf from "../conf/conf";
 
 export class AuthService {
   client = new Client();
-  account;
-  session;
+  // account;
+  // session;
 
   constructor() {
     this.client

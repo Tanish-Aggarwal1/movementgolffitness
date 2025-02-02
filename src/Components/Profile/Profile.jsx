@@ -34,9 +34,7 @@ function Profile() {
 
   if (loading) {
     return (
-      <Container>
         <Loader />
-      </Container>
     );
   }
 

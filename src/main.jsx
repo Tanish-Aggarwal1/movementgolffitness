@@ -11,6 +11,7 @@ import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Opportunities from './pages/Opportunities.jsx'
 import Calendars from './pages/Calendars.jsx';
+import Forms from './pages/Forms.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: '/opportunities',
         element: <Opportunities/>
+      },
+      {
+        path: '/forms',
+        element: <Forms/>
       }
     ]
   }
