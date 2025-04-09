@@ -1,20 +1,20 @@
+import dotenv from "dotenv";
+dotenv.config()
 import express from "express";
 import { google } from "googleapis";
 import cors from "cors";
-// import config from '../src/conf/conf.js'
-// import don from '../movementgolffitness-f40e0596ee82.json'
-
+// import something from './movementgolffitness-f40e0596ee82.json'
 
 const app = express();
 app.use(cors()); // Allow cross-origin requests
 app.use(express.json());
 
-const SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly';
-const SHEET_ID = "16W8pczg8seDF5BfyuF8Ix-HCOZmtcnXKFLXHeTWUoCw";
+const SCOPES = process.env.SCOPES;
+const SHEET_ID = process.env.SHEET_ID;
 const SHEET_RANGE = 'Golf - monthly measures!A1:R23';
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: '../movementgolffitness-f40e0596ee82.json',
+ keyFile: './movementgolffitness-f40e0596ee82.json',
   scopes: [SCOPES],
 });
 
